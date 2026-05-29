@@ -1,7 +1,7 @@
 {
   "app-id": "org.manasource.Mana",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "24.08",
+  "runtime-version": "25.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "mana",
   "finish-args": [
@@ -14,14 +14,19 @@
     "--persist=.config/mana",
     "--persist=.local/share/mana"
   ],
+  "cleanup": [
+    "/include",
+    "/lib/cmake",
+    "/lib/pkgconfig",
+    "*.la",
+    "*.a"
+  ],
   "modules": [
     "shared-modules/physfs/physfs.json",
+    "shared-modules/SDL2/SDL2_image.json",
+    "shared-modules/SDL2/SDL2_ttf.json",
     {
       "name": "Guichan",
-      "cleanup": [
-        "/include",
-        "/lib/pkgconfig"
-      ],
       "sources": [
         {
           "type": "archive",
