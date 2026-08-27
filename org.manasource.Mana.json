@@ -38,6 +38,9 @@
     {
       "name": "mana",
       "buildsystem": "cmake-ninja",
+      "config-opts": [
+        "-DUSE_SYSTEM_ENET=OFF"
+      ],
       "sources": [
         {
           "type": "git",
